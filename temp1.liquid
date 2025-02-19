@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Real Estate Website Landing Page</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link
+      href="/styles.css"
+      type="text/css"
+      rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  </head>
+
+  <body>
+    <div id="header-hero-container">
+      <header>
+        <div class="flex container">
+          <a id="logo" href="/">TEMPLATE 1.</a>
+          <nav>
+            <button
+              type="button"
+              id="nav-toggle"
+              title="test"
+              class="hamburger-menu">
+              <span class="strip"></span>
+              <span class="strip"></span>
+              <span class="strip"></span>
+            </button>
+
+            <ul id="nav-menu">
+              <li>
+                <a href="/" class="active">Home</a>
+              </li>
+              <li>
+                <a href="https://www.google.com">Properties</a>
+              </li>
+              <li>
+                <a href="/agents">Agents</a>
+              </li>
+              <li>
+                <a href="/about">About</a>
+              </li>
+              <li>
+                <a href="/news">News</a>
+              </li>
+              <li>
+                <a href="/contact">Contact</a>
+              </li>
+              <li id="close-flyout">
+                <span class="fas fa-times"></span>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <section id="hero">
+        <div class="fade"></div>
+        <div class="hero-text">
+          <h1>Buy and sell real estate properties</h1>
+          <p>Lorem ipsum dolor sit amet consectectur adipisicing elit. Laboriosam assumenda ea quo cupiditate facere deleniti fuga officia.</p>
+        </div>
+      </section>
+    </div>
+
+
+    <section>
+      <div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; box-sizing: border-box;">
+        <div style="display: flex; flex-direction: column; gap: 2rem; align-items: center;">
+          <!-- About Us Text Section -->
+          <div style="width: 100%; max-width: 800px;">
+            <h2 style="font-size: 2rem; font-weight: bold; color: #1a202c; margin-bottom: 1rem;">About Us</h2>
+            <p style="font-size: 1.125rem; line-height: 1.75rem; color: #718096; text-align: justify;">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+          </div>
+
+          <!-- About Us Image Section -->
+          <div style="width: 100%; max-width: 400px;">
+            <img
+              src="https://crn.realiti.io/images/AboutUs.webp"
+              alt="About Us Image"
+              loading="lazy"
+              style="width: 100%; height: auto; aspect-ratio: 1 / 1; border-radius: 0.375rem; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="DEFAULT COLLECTION">
+      <div class="container">
+        <div class="mx-16 w-fit h-fit mt-10 px-16">
+          <h2 style="text-align: center; font-size: 24px; font-weight: bold; color: #333; margin-bottom: 20px;">Our Products</h2>
+
+          <div class="default-collection-container">
+            <div class="default-collection-card">
+              <div class="default-collection-card-content">
+                <h3>Apartment</h3>
+                <p>Explore our range of modern and spacious apartments. Ideal for urban living with all amenities close by.</p>
+              </div>
+              <img src="https://crn.realiti.io/images/Apartment.webp" alt="Apartment">
+            </div>
+
+            <div class="default-collection-card">
+              <div class="default-collection-card-content">
+                <h3>Villa</h3>
+                <p>Luxury villas with private gardens and serene surroundings. Your perfect escape from the hustle.</p>
+              </div>
+              <img src="https://crn.realiti.io/images/Villa.webp" alt="Villa">
+            </div>
+
+            <div class="default-collection-card">
+              <div class="default-collection-card-content">
+                <h3>Rowhouse</h3>
+                <p>Elegant rowhouses in a gated community. Enjoy a blend of comfort and convenience.</p>
+              </div>
+              <img src="https://crn.realiti.io/images/Rowhouses.webp" alt="Rowhouse">
+            </div>
+
+            <div class="default-collection-card">
+              <div class="default-collection-card-content">
+                <h3>Plot</h3>
+                <p>Choose your perfect plot of land and build your dream home with flexible design options.</p>
+              </div>
+              <img src="https://crn.realiti.io/images/Plot.webp" alt="Plot">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section aria-labelledby="policies-heading" class="our-policies">
+      <h1 class="our-policies-title">
+        {{ serviceFinalData.title | default: "Experience the real estate difference we make!" }}
+      </h1>
+
+      <div class="our-policies-container">
+        {% assign policies = serviceFinalData.services | default: blank %}
+
+        {% if policies == blank %}
+          {% assign policies = '[{"name":"DISCOVER","imageSrc":"https://crn.realiti.io/images/Discover.svg","description":"Discover why we are the go-to choice for many home buyers and sellers."},
+                                                                                                                        {"name":"JOIN","imageSrc":"https://crn.realiti.io/images/Join.svg","description":"Join the many who found their dream homes with us. Let us help you make a difference."},
+                                                                                                                        {"name":"EXPERIENCE","imageSrc":"https://crn.realiti.io/images/Experience.svg","description":"Experience tranquility after your real estate transaction with Us."}]' | parse_json %}
+        {% endif %}
+
+        <div class="our-policies-grid">
+          {% for policy in policies %}
+            <div class="policy-card">
+              <div class="policy-image">
+                <img
+                  src="{{ policy.imageSrc | default: policy.imageUrl }}"
+                  alt="{{ policy.name }}"
+                  class="policy-img">
+              </div>
+              <div class="policy-content">
+                <h2 class="policy-title">{{ policy.name | default: policy.subTitle }}</h2>
+                <p class="policy-description">{{ policy.description }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+
+    <section id="testimonials">
+      <div class="container">
+        <h2>What Our Clients Are Saying</h2>
+        <div id="testimonials-slider"></div>
+      </div>
+    </section>
+  </body>
+</html>
