@@ -5,265 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ siteData.title }}</title>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/95dc93da07.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #334155;
+        background-color: #f1f5f9;
+      }
+
+      * {
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+      }
+
+      header {
+        background: #0f172a;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      #logo {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #0ea5e9;
+        text-decoration: none;
+      }
+
+      #nav-menu {
+        list-style: none;
+        display: flex;
+        gap: 24px;
+      }
+
+      #nav-menu li a {
+        color: #f1f5f9;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+      }
+
+      #nav-menu li a:hover {
+        color: #0ea5e9;
+      }
+
+      #hero {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        padding: 100px 20px;
+        gap: 40px;
+        background-color: #0ea5e9;
+        color: #fff;
+      }
+
+      #hero img {
+        width: 50%;
+        border-radius: 12px;
+      }
+
+      #hero .hero-text {
+        max-width: 500px;
+      }
+
+      #hero h1 {
+        font-size: 2.75rem;
+        margin-bottom: 1rem;
+      }
+
+      #hero p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      button.cta {
+        background: #334155;
+        border: none;
+        color: #fff;
+        font-size: 16px;
+        border-radius: 12px;
+        padding: 14px 40px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      button.cta:hover {
+        background: #1e293b;
+      }
+
+      #about, #testimonials, #services, footer {
+        padding: 4rem 20px;
+      }
+
+      #about {
+        background: #fff;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+      }
+
+      #about img {
+        width: 50%;
+        border-radius: 12px;
+      }
+
+      #testimonials {
+        background: #e2e8f0;
+      }
+
+      #services .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .product-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-8px);
+      }
+
+      footer {
+        background: #0f172a;
+        color: #f1f5f9;
+        text-align: center;
+      }
+    </style>
   </head>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&display=swap");
-
-    body {
-      font-family: "Inter", sans-serif;
-      margin: 0;
-      padding: 0;
-      font-size: 1rem;
-      color: #333;
-      line-height: 1.6;
-      background-color: #f9fafb;
-    }
-
-    * {
-      box-sizing: border-box;
-      outline: none;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    h1, h2, h3, h4, h5 {
-      margin: 0;
-      padding: 0;
-    }
-
-    h1, h2 {
-      font-family: "Merriweather", serif;
-      font-weight: 700;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      line-height: 1.2;
-      margin-bottom: 1rem;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #1e40af;
-      margin-bottom: 1.5rem;
-    }
-
-    p {
-      margin: 0 0 1.5rem;
-      color: #4b5563;
-    }
-
-    button.rounded {
-      background: #1e40af;
-      border: none;
-      color: #fff;
-      font-size: 16px;
-      border-radius: 30px;
-      padding: 12px 30px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button.rounded:hover {
-      background: #1c3d72;
-    }
-
-    /* Header Styles */
-    header {
-      background: #fff;
-      padding: 1rem 0;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      position: fixed;
-      width: 100%;
-      z-index: 1000;
-    }
-
-    #logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #1e40af;
-      text-decoration: none;
-    }
-
-    #nav-menu {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    #nav-menu li a {
-      color: #4b5563;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    #nav-menu li a:hover {
-      color: #1e40af;
-    }
-
-    /* Hero Section */
-    #hero {
-      background: url("https://via.placeholder.com/1920x1080") center center no-repeat;
-      background-size: cover;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-      position: relative;
-    }
-
-    #hero .fade {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    #hero .hero-text {
-      position: relative;
-      z-index: 2;
-    }
-
-    #hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    #hero p {
-      font-size: 1.25rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* About Section */
-    #about {
-      padding: 4rem 0;
-      background: #fff;
-    }
-
-    #about .about-content {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-
-    #about img {
-      max-width: 50%;
-      border-radius: 8px;
-    }
-
-    /* Services Section */
-    #services {
-      padding: 4rem 0;
-      background: #f9fafb;
-    }
-
-    #services .products-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    #services .product-card {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    #services .product-card:hover {
-      transform: translateY(-10px);
-    }
-
-    #services .product-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    #services .product-content {
-      padding: 1.5rem;
-    }
-
-    /* Policies Section */
-    .our-policies {
-      padding: 4rem 0;
-      background: #fff;
-    }
-
-    .our-policies-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .policy-card {
-      background: #f9fafb;
-      border-radius: 8px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .policy-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .policy-img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    /* Testimonials Section */
-    #testimonials {
-      padding: 4rem 0;
-      background: #f9fafb;
-    }
-
-    #testimonials-slider {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    #testimonials-slider blockquote {
-      font-size: 1.25rem;
-      font-style: italic;
-      color: #4b5563;
-    }
-
-    /* Footer */
-    footer {
-      background: #1e40af;
-      color: #fff;
-      padding: 4rem 0;
-      text-align: center;
-    }
-
-    footer a {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
   <body>
     <header>
       <div class="container flex">
@@ -279,22 +163,26 @@
     </header>
 
     <section id="hero">
-      <div class="fade"></div>
+      <img src="{{ heroData.image }}" alt="Hero Image" loading="lazy">
       <div class="hero-text">
         <h1>{{ heroData.title }}</h1>
         <p>{{ heroData.description }}</p>
+        <button class="cta">Get Started</button>
       </div>
     </section>
 
     <section id="about">
+      <img src="{{ aboutUs.image }}" alt="About Us Image" loading="lazy">
+      <div>
+        <h2>{{ aboutUs.title }}</h2>
+        <p>{{ aboutUs.description }}</p>
+      </div>
+    </section>
+
+    <section id="testimonials">
       <div class="container">
-        <div class="about-content">
-          <img src="{{ aboutUs.image }}" alt="About Us Image" loading="lazy">
-          <div>
-            <h2>{{ aboutUs.title }}</h2>
-            <p>{{ aboutUs.description }}</p>
-          </div>
-        </div>
+        <h2>{{ testimonialsData.title }}</h2>
+        <div id="testimonials-slider"></div>
       </div>
     </section>
 
@@ -312,30 +200,6 @@
             </div>
           {% endfor %}
         </div>
-      </div>
-    </section>
-
-    <section class="our-policies">
-      <div class="container">
-        <h1 class="our-policies-title">{{ policiesData.title }}</h1>
-        <div class="our-policies-grid">
-          {% for policy in policiesData.services %}
-            <div class="policy-card">
-              <img src="{{ policy.imageSrc }}" alt="{{ policy.name }}" class="policy-img">
-              <div class="policy-content">
-                <h2 class="policy-title">{{ policy.name }}</h2>
-                <p class="policy-description">{{ policy.description }}</p>
-              </div>
-            </div>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <section id="testimonials">
-      <div class="container">
-        <h2>{{ testimonialsData.title }}</h2>
-        <div id="testimonials-slider"></div>
       </div>
     </section>
 
