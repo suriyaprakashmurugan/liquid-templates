@@ -1,8 +1,8 @@
 {
- "template":"temp1",
+ "template":"temp2",
   "siteData": {
-    "title": "Real Estate Website Landing Page",
-    "logoText": "TEMPLATE 1.",
+    "title": "Lorem ipsum dolor sit amet consectectur adipisicing elit.",
+    "logoText": "TEMPLATE 2.",
     "navMenu": [
       { "label": "Home", "url": "/", "active": "active" },
       { "label": "Properties", "url": "https://www.google.com", "active": "" },
