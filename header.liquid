@@ -1,30 +1,19 @@
-<nav class="navbar">
-  <div class="navbar-container">
-    <a href="/" class="logo">{{ "CoolStore" | default: "MyShop" }}</a>
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/shop">Shop</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-    <div class="auth-section">
-      {% if user %}
-        <span>Welcome, Jane Doe</span>
-        <a href="/logout" class="btn">Logout</a>
-      {% else %}
-        <a href="/login" class="btn">Login</a>
-        <a href="/register" class="btn btn-primary">Sign Up</a>
-      {% endif %}
-    </div>
-  </div>
-</nav>
+      <header>
+        <div class="flex container">
+          <a id="logo" href="/">{{ siteData.logoText }}</a>
+          <nav>
+            <button type="button" id="nav-toggle" class="hamburger-menu">
+              <span class="strip"></span>
+              <span class="strip"></span>
+              <span class="strip"></span>
+            </button>
 
-<style>
-  .navbar { background-color: #fff; padding: 1rem 2rem; display: flex; justify-content: center; border-bottom: 1px solid #eaeaea; }
-  .navbar-container { width: 100%; max-width: 1200px; display: flex; justify-content: space-between; align-items: center; }
-  .logo { font-size: 1.5rem; font-weight: bold; color: #333; text-decoration: none; }
-  .nav-links { display: flex; list-style: none; gap: 1.5rem; }
-  .nav-links a { text-decoration: none; color: #333; font-weight: 500; }
-  .auth-section .btn { margin-left: 1rem; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; border: 1px solid #333; color: #333; }
-  .btn-primary { background-color: #333; color: white; }
-</style>
+            <ul id="nav-menu">
+              {% for item in siteData.navMenu %}
+                <li><a href="{{ item.url }}" class="{{ item.active }}">{{ item.label }}</a></li>
+              {% endfor %}
+              <li id="close-flyout"><span class="fas fa-times"></span></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
