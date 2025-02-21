@@ -1079,26 +1079,6 @@ footer small a:hover {
 </style>
   <body>
     <div id="header-hero-container">
-      <header>
-        <div class="flex container">
-          <a id="logo" href="/">{{ siteData.logoText }}</a>
-          <nav>
-            <button type="button" id="nav-toggle" class="hamburger-menu">
-              <span class="strip"></span>
-              <span class="strip"></span>
-              <span class="strip"></span>
-            </button>
-
-            <ul id="nav-menu">
-              {% for item in siteData.navMenu %}
-                <li><a href="{{ item.url }}" class="{{ item.active }}">{{ item.label }}</a></li>
-              {% endfor %}
-              <li id="close-flyout"><span class="fas fa-times"></span></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-
       {{ header }}
 
       <section id="hero">
