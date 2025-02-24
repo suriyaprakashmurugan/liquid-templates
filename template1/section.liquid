@@ -1,0 +1,23 @@
+<section class="hero">
+  <h2>{{ heroData.title }}</h2>
+  <p>{{ heroData.description }}</p>
+</section>
+
+<section class="about-us">
+  <h2>{{ aboutUs.title }}</h2>
+  <p>{{ aboutUs.description }}</p>
+  <img src="{{ aboutUs.image }}" alt="About Us" width="100px" height="100px">
+</section>
+
+<section class="products">
+  <h2>{{ productsData.title }}</h2>
+  <div class="product-list">
+    {% for product in productsData.items %}
+      <div class="product-item">
+        <h3>{{ product.name }}</h3>
+        <p>{{ product.description }}</p>
+        <img src="{{ product.image }}" alt="{{ product.name }}" width="100px" height="100px">
+      </div>
+    {% endfor %}
+  </div>
+</section>

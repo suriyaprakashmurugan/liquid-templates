@@ -1,0 +1,6 @@
+body { font-family: 'Roboto', sans-serif; color: #333; }
+header, footer { background-color: #222; color: #fff; padding: 25px; }
+nav ul { display: flex; justify-content: center; gap: 20px; }
+.hero-section { background-color: #f0f0f0; padding: 50px 20px; text-align: center; }
+.about-section img { width: 100%; height: auto; }
+.products { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }

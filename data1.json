@@ -1,5 +1,5 @@
 {
- "template":"temp1",
+  "template": "temp2",
   "siteData": {
     "title": "Real Estate Website Landing Page",
     "logoText": "TEMPLATE 1.",
@@ -18,7 +18,7 @@
   },
   "aboutUs": {
     "title": "About Us",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     "image": "https://crn.realiti.io/images/AboutUs.webp"
   },
   "productsData": {
@@ -31,17 +31,17 @@
       },
       {
         "name": "Villa",
-        "description": "Luxury villas with private gardens and serene surroundings. Your perfect escape from the hustle.",
+        "description": "Luxury villas with private gardens and serene surroundings.",
         "image": "https://crn.realiti.io/images/Villa.webp"
       },
       {
         "name": "Rowhouse",
-        "description": "Elegant rowhouses in a gated community. Enjoy a blend of comfort and convenience.",
+        "description": "Elegant rowhouses in a gated community.",
         "image": "https://crn.realiti.io/images/Rowhouses.webp"
       },
       {
         "name": "Plot",
-        "description": "Choose your perfect plot of land and build your dream home with flexible design options.",
+        "description": "Choose your perfect plot of land and build your dream home.",
         "image": "https://crn.realiti.io/images/Plot.webp"
       }
     ]
@@ -57,7 +57,7 @@
       {
         "name": "JOIN",
         "imageSrc": "https://crn.realiti.io/images/Join.svg",
-        "description": "Join the many who found their dream homes with us. Let us help you make a difference."
+        "description": "Join the many who found their dream homes with us."
       },
       {
         "name": "EXPERIENCE",

@@ -1,0 +1,10 @@
+<header>
+  <h1>{{ siteData.logoText }}</h1>
+  <nav>
+    <ul>
+      {% for item in siteData.navMenu %}
+        <li class="{{ item.active }}"><a href="{{ item.url }}">{{ item.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
